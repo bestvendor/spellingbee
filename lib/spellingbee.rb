@@ -88,7 +88,7 @@ class SpellingBee
   #   s.correct "qqqqqq"     #=> ["qqqqqq"]   -> no suggestions
   #
   def correct word
-    known [word] or known(variation_words word) or [word]
+    known [word] or known(variation_words word)
   end
   
 end
