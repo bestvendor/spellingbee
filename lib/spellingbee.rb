@@ -7,7 +7,7 @@ class SpellingBee
   def initialize(opts = {})
     options = { :source_text => DEFAULT_DICT }.merge opts
     @dict_frequency = Hash.new(1)
-    @dict_words = File.new(options[:source_text]).read.downcase.scan(/(.+?)\n/).to_s
+    @dict_words = File.new(options[:source_text]).read.downcase.scan(/(.+?)\n/).map{|x| x.join(' ')}
     @dict_words.each { |word| @dict_frequency[word] += 1 }
   end
     
