@@ -72,7 +72,7 @@ class SpellingBee
   #    known ["asdfgh", "known", "word", "qqqq"] #=> ["known", "word"] 
   #
   def known words
-    known_words = words.find_all { |w| @dict_frequency.has_key? w }
+    known_words = words.find_all { |w| @dict_frequency.has_key? w && w.length > 1 }
     known_words.empty? ? nil : known_words
   end
   
